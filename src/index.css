@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --glass-bg: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.06);
+}
+
+html, body, #root { height: 100%; }
+body {
+  @apply bg-gradient-to-br from-[#0f172a] via-[#090913] to-[#05040b] text-slate-100 antialiased;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.app-shell {
+  @apply min-h-screen flex items-center justify-center p-6;
+  background-image: radial-gradient(60rem 30rem at -10% -20%, rgba(139,92,246,0.08), transparent 6%),
+                    radial-gradient(40rem 20rem at 120% 120%, rgba(236,72,153,0.06), transparent 5%);
+}
+
+.card {
+  @apply w-full max-w-xl p-6 rounded-2xl border;
+  background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-color: var(--glass-border);
+  backdrop-filter: blur(10px);
+}
+
+.header { @apply mb-4; }
+.title { @apply text-2xl font-semibold; }
+.subtitle { @apply text-sm text-slate-400; }
+
+.password-box {
+  @apply mt-4 mb-6 px-4 py-3 rounded-lg bg-clip-padding border; 
+  background: rgba(255,255,255,0.02);
+  border-color: rgba(255,255,255,0.03);
+}
+
+.btn { @apply inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200; }
+.btn-primary { @apply bg-gradient-to-r from-accent-from to-accent-to text-white shadow-md hover:opacity-95 ring-1 ring-transparent hover:ring-accent-from/30; }
+.btn-ghost { @apply bg-transparent border border-transparent hover:bg-white/10; }
+
+/* Toggle and slider tweaks */
+.toggle { @apply inline-flex items-center gap-3; }
+input[type='checkbox'] { @apply w-5 h-5 rounded border border-slate-600 bg-slate-800; }
+input[type='range'] { @apply w-full h-2 rounded-lg bg-gradient-to-r from-[#6d28d9] to-[#ec4899] appearance-none; }
+
+input[type='range']::-webkit-slider-thumb { appearance: none; width: 16px; height: 16px; background: white; border-radius: 9999px; box-shadow: 0 2px 6px rgba(0,0,0,0.4); }
+input[type='range']::-moz-range-thumb { width: 16px; height: 16px; background: white; border-radius: 9999px; box-shadow: 0 2px 6px rgba(0,0,0,0.4); }
+
+/* Smooth focus */
+button:focus, input:focus { outline: none; box-shadow: 0 0 0 4px rgba(139,92,246,0.08); }
+
+.toggle { @apply inline-flex items-center gap-3; }
+
+.strength-weak { color: #fb7185; }
+.strength-medium { color: #fbbf24; }
+.strength-strong { color: #34d399; }
+
+.footer { @apply mt-6 text-center text-sm text-slate-500; }
+
+/* Smooth transitions for inputs (handled above) */
+
+
+@media (max-width: 640px){
+  .card { @apply p-4; }
+}
