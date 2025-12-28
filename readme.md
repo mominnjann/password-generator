@@ -2,6 +2,9 @@
 
 A small Vite + React + TypeScript project implementing a Strong Password Generator UI with Tailwind CSS and shadcn-style components.
 
+Live Preview 
+Website : https://password-generator-momin.netlify.app/
+
 Technologies
 - Vite
 - React + TypeScript
